@@ -1,2 +1,5 @@
 __pycache__/
 lol/__pycache__/
+lol/shared/__pycache__/
+lol/shared/
+.gitignore
