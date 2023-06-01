@@ -6,17 +6,25 @@ from shared.credentials import key
 watcher = LolWatcher(key)
 my_region = 'LA1'
 
-rank_multiplier = {
-    'CHALLENGER': 9000,
-    'GRANDMASTER': 8000,
-    'MASTER': 7000,
-    'DIAMOND': 6000,
-    'PLATINUM': 5000,
-    'GOLD': 4000,
-    'SILVER': 3000,
-    'BRONZE': 2000,
-    'IRON': 1000
-}
+rank_multiplier =[
+    {
+        'CHALLENGER': 9000,
+        'GRANDMASTER': 8000,
+        'MASTER': 7000,
+        'DIAMOND': 6000,
+        'PLATINUM': 5000,
+        'GOLD': 4000,
+        'SILVER': 3000,
+        'BRONZE': 2000,
+        'IRON': 1000
+    },
+    {
+        'IV' : 100,
+        'III' : 300,
+        'II' : 500,
+        'I' : 700,
+    }
+]
 
 players = [
     'AK7 Dianel',
@@ -47,7 +55,7 @@ class Player:
                 self.tier = dictionary['tier']
                 self.rank = dictionary['rank']
                 self.points = dictionary['leaguePoints']
-                self.elo = rank_multiplier.get(self.tier, 0) + rank_multiplier.get(self.rank, 0) + self.points
+                self.elo = rank_multiplier[0].get(self.tier, 0) + rank_multiplier[1].get(self.rank, 0) + self.points
 
     def __str__(self):
         return f"{self.name} -: {self.tier} {self.rank} {self.points}"
