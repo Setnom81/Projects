@@ -61,14 +61,14 @@ class Player:
     def __str__(self):
         return f"{self.name} -: {self.tier} {self.rank} {self.points}"
 
-
+#empty list
 player_objects = []
-
+#loop to go through all players summoner name and calculate elo
 for player_name in players:
     player = Player(player_name)
     player.calculate_elo()
     player_objects.append(player)
-
+#sorting list from higher ranked on
 sorted_players = sorted(player_objects, key=lambda p: p.elo, reverse=True)
 
 for player in sorted_players:
