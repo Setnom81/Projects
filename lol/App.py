@@ -6,6 +6,7 @@ from shared.credentials import key
 watcher = LolWatcher(key)
 my_region = 'LA1'
 
+#rank multiplier to sort list
 rank_multiplier =[
     {
         'CHALLENGER': 9000,
@@ -25,7 +26,7 @@ rank_multiplier =[
         'I' : 700,
     }
 ]
-
+#players lists
 players = [
     'AK7 Dianel',
     'AK7 Nero',
@@ -37,7 +38,7 @@ players = [
     'Thayron',
     'AK7 Joel'
 ]
-
+#Creating player object
 class Player:
     def __init__(self, name):
         self.name = name
@@ -45,11 +46,11 @@ class Player:
         self.rank = None
         self.tier = None
         self.points = None
-
+    #function to calculate elo number
     def calculate_elo(self):
         get_id = watcher.summoner.by_name(my_region, self.name)
         get_ranked = watcher.league.by_summoner(my_region, get_id['id'])
-
+        #find which dictionary has the soloqueue info
         for dictionary in get_ranked:
             if 'RANKED_SOLO_5x5' in dictionary.values():
                 self.tier = dictionary['tier']
