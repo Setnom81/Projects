@@ -1,6 +1,7 @@
 from riotwatcher import LolWatcher, ApiError
-import pandas as pd
+import pyspark
 from shared.credentials import key
+
 
 #global variables
 watcher = LolWatcher(key)
@@ -73,3 +74,6 @@ sorted_players = sorted(player_objects, key=lambda p: p.elo, reverse=True)
 
 for player in sorted_players:
     print(player)
+
+#df_columns = ["Summoner Name","Rank","Division","Points"]
+#df = 
