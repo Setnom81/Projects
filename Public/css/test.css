@@ -4,10 +4,10 @@ div{
     height: 50px;
 }
 .MenuNavegacion{
-    justify-content: space-between;
     background-color: #023047;
     display: flex;
     height: 50px;
+    justify-content: space-between;
 }
 .menu{
     display: flex;
@@ -15,8 +15,20 @@ div{
     align-items: center;
     
 }
-#redes{
-    height: 20px;
-    width: 20px;
+
+.menu p{
+    color: #FFB703;
+}
+
+a{
+    text-decoration: none;
+}
+
+.menu img{
     display: flex;
+    height: 35px;
+    width: 35px;
+    justify-content: space-around;
+    margin-right: 10px;
+    margin-left: 0px;
 }
